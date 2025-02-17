@@ -1,18 +1,21 @@
 {
+  "name": "with-tailwind",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "check-types": "turbo run check-types",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-all": "turbo run lint && pnpm run format && pnpm run build"
+    "check": "turbo run lint && pnpm run format && turbo run build"
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
     "prettier": "^3.5.1",
-    "turbo": "^2.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.11"
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "turbo": "^2.4.2"
   },
   "packageManager": "pnpm@8.15.6",
-  "name": "with-vite-react"
+  "engines": {
+    "node": ">=18"
+  }
 }
