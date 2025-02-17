@@ -6,7 +6,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
-    <header id="header">
+    <header id="header" className="ui-bg-green-100">
       <h1>{title}</h1>
     </header>
   );
