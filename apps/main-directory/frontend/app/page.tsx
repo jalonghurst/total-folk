@@ -1,3 +1,5 @@
+// For the home page '/' route, the first page that users see when they visit the app.
+
 import Image from "next/image";
 import { Card } from "@repo/ui/card";
 
