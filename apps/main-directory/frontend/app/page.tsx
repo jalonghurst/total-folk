@@ -1,5 +1,4 @@
 // For the home page '/' route, the first page that users see when they visit the app.
-
 import Image from "next/image";
 import { Card } from "@repo/ui/card";
 
@@ -93,13 +92,7 @@ export default function Page() {
             </div>
 
             <div className="w-[120px] h-[120px] z-50">
-              <Image
-                alt=""
-                height={120}
-                priority
-                src="turborepo.svg"
-                width={120}
-              />
+              <Image alt="" height={120} priority src="logo.svg" width={120} />
             </div>
           </div>
           <Gradient

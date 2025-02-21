@@ -7,7 +7,8 @@
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check": "turbo run lint && pnpm run format && turbo run build"
+    "check": "turbo run lint && pnpm run format && turbo run build",
+    "watch": "turbo run dev --filter @repo/ui"
   },
   "devDependencies": {
     "prettier": "^3.5.1",

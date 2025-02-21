@@ -72,9 +72,6 @@ importers:
 
   apps/main-directory/frontend:
     dependencies:
-      '@heroicons/react':
-        specifier: ^2.2.0
-        version: 2.2.0(react@19.0.0)
       '@repo/ui':
         specifier: workspace:*
         version: link:../../../packages/ui
@@ -174,10 +171,16 @@ importers:
 
   packages/ui:
     dependencies:
+      next:
+        specifier: ^15.1.7
+        version: 15.1.7(react-dom@19.0.0)(react@19.0.0)
       react:
         specifier: ^19
         version: 19.0.0
     devDependencies:
+      '@heroicons/react':
+        specifier: ^2.2.0
+        version: 2.2.0(react@19.0.0)
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
@@ -320,7 +323,7 @@ packages:
       react: '>= 16 || ^19.0.0-rc'
     dependencies:
       react: 19.0.0
-    dev: false
+    dev: true
 
   /@humanfs/core@0.19.1:
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2832,7 +2835,6 @@ packages:
   /react@19.0.0:
     resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
     engines: {node: '>=0.10.0'}
-    dev: false
 
   /read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
