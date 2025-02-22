@@ -2,7 +2,13 @@ import React from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-export const TopNavBar: React.FC<{ children?: React.ReactNode }> = (props) => {
+export const TopNavBar: React.FC<{
+  children?: React.ReactNode;
+  collapseDesktopMenu: boolean;
+  setCollapseDesktopMenu: (collapseDesktopMenu: boolean) => void;
+  slideInMenuOpen: boolean;
+  setslideInMenuOpen: (slideInMenuOpen: boolean) => void;
+}> = (props) => {
   return (
     <div className="ui-flex ui-flex-col ui-flex-1 ui-min-w-0 ui-overflow-hidden base-bg-color">
       <div className="ui-flex ui-items-center ui-justify-between ui-px-4 ui-py-1.5 ui-lg:m-0.5 ui-lg:py-6 ui-lg:px-8">
@@ -26,9 +32,13 @@ export const TopNavBar: React.FC<{ children?: React.ReactNode }> = (props) => {
           <button
             type="button"
             className="ui-inline-flex ui-items-center ui-justify-center ui-w-12 ui--mr-3 ui-text-gray-600 ui-rounded-md ui-aspect-1 ui-hover:text-gray-900 ui-lg:hidden"
+            onClick={() => {
+              props.setslideInMenuOpen(true);
+              props.setCollapseDesktopMenu(false);
+            }}
           >
             <span className="sr-only">Access menu</span>
-            <Bars3Icon className="ui-w-10 ui-h-10" aria-hidden="true" />
+            <Bars3Icon className="ui-w-6 ui-h-6" aria-hidden="true" />
           </button>
         </div>
       </div>
