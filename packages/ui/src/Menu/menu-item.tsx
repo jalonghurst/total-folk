@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@heroicons/react/24/outline";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Link from "next/link";
 import { classNames } from "../types/class-names";
@@ -23,19 +20,21 @@ const MenuItem: React.FC<{
   setCollapseSidebar,
 }) => {
   const [isOpen, setIsOpen] = useState(
-    item.isActive || (item.isMatched && isSearchActive)
+    item.isActive || (item.isMatched && isSearchActive),
   );
   const isParentToSingleLeaf =
     item.menuItems.length === 1 && item.menuItems[0]?.menuItems.length === 0;
 
   const defaultEntry = item.menuItems?.find((v) =>
-    v.name.toLowerCase().includes("default")
+    v.name.toLowerCase().includes("default"),
   );
 
   const getLinkToTheTargetComponent = () => {
     if (defaultEntry) return defaultEntry.path;
 
-    return item.menuItems.length === 1 && item.menuItems[0] ? item.menuItems[0].path : item.path;
+    return item.menuItems.length === 1 && item.menuItems[0]
+      ? item.menuItems[0].path
+      : item.path;
   };
 
   const linkTo = getLinkToTheTargetComponent();
@@ -53,13 +52,13 @@ const MenuItem: React.FC<{
     <li
       className={classNames(
         "ui-mt-1 ui-overflow-hidden ui-py-2",
-        collapseSidebar && "ui-ml-2 ui-w-12 ui-rounded-full"
+        collapseSidebar && "ui-ml-2 ui-w-12 ui-rounded-full",
       )}
     >
       <div
         className={classNames(
           "ui-flex ui-items-center",
-          collapseSidebar ? "" : "ui-justify-between ui-px-3"
+          collapseSidebar ? "" : "ui-justify-between ui-px-3",
         )}
       >
         <Link
@@ -76,22 +75,24 @@ const MenuItem: React.FC<{
             item.isActive && "ui-font-semibold",
             item.menuItems.length <= 1 && item.isMatched
               ? "ui-text-yellow-500"
-              : ""
+              : "",
           )}
         >
           {level === 1 && item.icon ? (
             React.cloneElement(item.icon as React.ReactElement<any>, {
-                className: classNames(
-                  "ui-w-5",
-                  !collapseSidebar && "ui-mx-2",
-                  item.isActive ? "ui-text-blue-500" : "ui-text-gray-400"
-                ),
-                onClick: () => setCollapseSidebar && setCollapseSidebar(false),
-              })
+              className: classNames(
+                "ui-w-5",
+                !collapseSidebar && "ui-mx-2",
+                item.isActive ? "ui-text-blue-500" : "ui-text-gray-400",
+              ),
+              onClick: () => setCollapseSidebar && setCollapseSidebar(false),
+            })
           ) : (
             <div className="ui-pl-10"></div>
           )}
-          {!collapseSidebar && <span className="ui-truncate">{item.title}</span>}
+          {!collapseSidebar && (
+            <span className="ui-truncate">{item.title}</span>
+          )}
         </Link>
         {!collapseSidebar &&
           item.menuItems.length > 0 &&

@@ -11,7 +11,7 @@
     "watch": "turbo run dev --filter @repo/ui"
   },
   "devDependencies": {
-    "prettier": "^3.5.1",
+    "prettier": "^3.5.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.4.2"
   },

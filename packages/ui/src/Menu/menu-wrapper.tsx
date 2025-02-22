@@ -6,10 +6,10 @@ import { useState } from "react";
 import { SlideInMenuBar } from "./slide-in-menu-bar";
 
 export const MenuWrapper = ({ children }: { children: React.ReactNode }) => {
-    // Static desktop sidebar
-    const [collapseDesktopMenu, setCollapseDesktopMenu] = useState(false);
-    // Slide in small screen side bar
-    const [slideInMenuOpen, setslideInMenuOpen] = useState(false);
+  // Static desktop sidebar
+  const [collapseDesktopMenu, setCollapseDesktopMenu] = useState(false);
+  // Slide in small screen side bar
+  const [slideInMenuOpen, setslideInMenuOpen] = useState(false);
 
   const menuProps = {
     slideInMenuOpen,

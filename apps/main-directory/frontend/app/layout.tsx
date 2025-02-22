@@ -2,7 +2,7 @@ import "@repo/ui/styles.css";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { TopNavBar } from "@repo/ui/top-nav-bar";
+import { MenuWrapper } from "@repo/ui/menu-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,8 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="z-10 flex h-screen overflow-hidden">
           <div className="relative z-10 min-h-screen w-screen">
-            <TopNavBar />
-            {children}
+            <MenuWrapper>{children}</MenuWrapper>
           </div>
         </div>
       </body>

@@ -10,13 +10,13 @@ export const DesktopMenuBar: React.FC<{
   setCollapseDesktopMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }> = (props) => {
   const sidebarRef = useRef<HTMLDivElement | null>(null);
-  
+
   return (
     <div className="ui-relative ui-z-10 ui-hidden ui-lg:flex ui-lg:flex-shrink-0">
       <div
         className={classNames(
           props.collapseDesktopMenu ? "ui-w-20" : "ui-w-auto",
-          "ui-flex ui-flex-col"
+          "ui-flex ui-flex-col",
         )}
       >
         <div className="ui-flex ui-flex-col ui-flex-1 ui-min-h-0 ui-border-l menu-bg-color">
@@ -55,7 +55,7 @@ export const DesktopMenuBar: React.FC<{
               <div
                 className={classNames(
                   "ui-flex-grow ui-space-y-2",
-                  props.collapseDesktopMenu && "ui-px-2"
+                  props.collapseDesktopMenu && "ui-px-2",
                 )}
               >
                 <GenerateNavMenu
