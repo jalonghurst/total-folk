@@ -51,14 +51,14 @@ const MenuItem: React.FC<{
   return (
     <li
       className={classNames(
-        "ui-mt-1 ui-overflow-hidden ui-py-2",
-        collapseSidebar && "ui-ml-2 ui-w-12 ui-rounded-full",
+        "mt-1 overflow-hidden py-2",
+        collapseSidebar && "ml-2 w-12 rounded-full",
       )}
     >
       <div
         className={classNames(
-          "ui-flex ui-items-center",
-          collapseSidebar ? "" : "ui-justify-between ui-px-3",
+          "flex items-center",
+          collapseSidebar ? "" : "justify-between px-3",
         )}
       >
         <Link
@@ -70,38 +70,36 @@ const MenuItem: React.FC<{
             }
           }}
           className={classNames(
-            "ui-inline-flex ui-items-center ui-text-sm",
-            collapseSidebar && "ui-m-auto",
-            item.isActive && "ui-font-semibold",
+            "inline-flex items-center text-sm",
+            collapseSidebar && "m-auto",
+            item.isActive && "font-semibold",
             item.menuItems.length <= 1 && item.isMatched
-              ? "ui-text-yellow-500"
+              ? "text-yellow-500"
               : "",
           )}
         >
           {level === 1 && item.icon ? (
             React.cloneElement(item.icon as React.ReactElement<any>, {
               className: classNames(
-                "ui-w-5",
-                !collapseSidebar && "ui-mx-2",
-                item.isActive ? "ui-text-blue-500" : "ui-text-gray-400",
+                "w-5",
+                !collapseSidebar && "mx-2",
+                item.isActive ? "text-blue-500" : "text-gray-400",
               ),
               onClick: () => setCollapseSidebar && setCollapseSidebar(false),
             })
           ) : (
-            <div className="ui-pl-10"></div>
+            <div className="pl-10"></div>
           )}
-          {!collapseSidebar && (
-            <span className="ui-truncate">{item.title}</span>
-          )}
+          {!collapseSidebar && <span className="truncate">{item.title}</span>}
         </Link>
         {!collapseSidebar &&
           item.menuItems.length > 0 &&
           !isParentToSingleLeaf && (
             <button onClick={handleChevronClick}>
               {isOpen ? (
-                <ChevronUpIcon className="ui-w-3 ui-h-3 ui-mr-3 ui-text-gray-400" />
+                <ChevronUpIcon className="w-3 h-3 mr-3 text-gray-400" />
               ) : (
-                <ChevronDownIcon className="ui-w-3 ui-h-3 ui-mr-3 ui-text-gray-400" />
+                <ChevronDownIcon className="w-3 h-3 mr-3 text-gray-400" />
               )}
             </button>
           )}
@@ -111,7 +109,7 @@ const MenuItem: React.FC<{
         isOpen &&
         item.menuItems.length > 0 &&
         !isParentToSingleLeaf && (
-          <ul className={classNames(level > 1 && "ui-ml-5")}>
+          <ul className={classNames(level > 1 && "ml-5")}>
             {item.menuItems
               .filter((item) => !isSearchActive || item.isMatched)
               .map((item) => (
