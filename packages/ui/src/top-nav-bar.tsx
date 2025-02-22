@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export const TopNavBar: React.FC<{ children?: React.ReactNode }> = (props) => {
   return (
-    <div className="flex flex-col flex-1 min-w-0 overflow-hidden base-bg-color">
-      <div className="flex items-center justify-between px-4 py-1.5 lg:m-0.5 lg:py-6 lg:px-8">
+    <div className="ui-flex ui-flex-col ui-flex-1 ui-min-w-0 ui-overflow-hidden base-bg-color">
+      <div className="ui-flex ui-items-center ui-justify-between ui-px-4 ui-py-1.5 ui-lg:m-0.5 ui-lg:py-6 ui-lg:px-8">
         <Link href="/">
-          <img className="h-10 aspect-1" src="/logo.png" alt="logo" />
+          <img className="ui-h-10 ui-aspect-1" src="/logo.svg" alt="logo" />
         </Link>
-        <div className="justify-center hidden lg:flex md:space-x-10">
+        <div className="ui-justify-center ui-hidden ui-lg:flex ui-md:space-x-10">
           <button>
             <Link href="/about">About</Link>
           </button>
@@ -19,22 +19,22 @@ export const TopNavBar: React.FC<{ children?: React.ReactNode }> = (props) => {
           </button>
           <button>More</button>
         </div>
-        <div className="flex justify-center space-x-3 btn btn-primary btn:hover">
+        <div className="ui-flex ui-justify-center ui-space-x-3 btn btn-primary btn:hover">
           <Link href={"signin"}>Get started</Link>
         </div>
-        <div className="flex lg:w-0 lg:hidden">
+        <div className="ui-flex ui-lg:w-0 ui-lg:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center w-12 -mr-3 text-gray-600 rounded-md aspect-1 hover:text-gray-900 lg:hidden"
+            className="ui-inline-flex ui-items-center ui-justify-center ui-w-12 ui--mr-3 ui-text-gray-600 ui-rounded-md ui-aspect-1 ui-hover:text-gray-900 ui-lg:hidden"
           >
             <span className="sr-only">Access menu</span>
-            <Bars3Icon className="w-6 h-6" aria-hidden="true" />
+            <Bars3Icon className="ui-w-10 ui-h-10" aria-hidden="true" />
           </button>
         </div>
       </div>
       <div
         id="scroll"
-        className="relative z-10 h-full overflow-auto overflow-x-hidden"
+        className="ui-relative ui-z-10 ui-h-full ui-overflow-auto ui-overflow-x-hidden"
       >
         {props.children}
       </div>
