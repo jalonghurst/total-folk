@@ -2,7 +2,7 @@ import React from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-export const TopNavBar: React.FC<{
+const TopNavBar: React.FC<{
   children?: React.ReactNode;
   collapseDesktopMenu: boolean;
   setCollapseDesktopMenu: (collapseDesktopMenu: boolean) => void;
@@ -12,9 +12,9 @@ export const TopNavBar: React.FC<{
   return (
     <div className="flex flex-col flex-1 min-w-0 overflow-hidden base-bg-color">
       <div className="flex items-center justify-between px-4 py-1.5 lg:m-0.5 lg:py-6 lg:px-8">
-        <Link href="/">
+        {/* <Link href="/">
           <img className="h-10 aspect-1" src="/logo.svg" alt="logo" />
-        </Link>
+        </Link> */}
         <div className="justify-center hidden lg:flex md:space-x-10">
           <button>
             <Link href="/about">About</Link>
@@ -51,3 +51,5 @@ export const TopNavBar: React.FC<{
     </div>
   );
 };
+
+export default TopNavBar;

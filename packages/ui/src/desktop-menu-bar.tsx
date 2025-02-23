@@ -1,6 +1,6 @@
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import React, { useRef } from "react";
-import { classNames } from "../types/class-names";
+import { classNames } from "./types/class-names";
 import { GenerateNavMenu } from "./generate-menu";
 import { menuItems } from "./menu-items";
 

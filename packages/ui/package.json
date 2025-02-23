@@ -10,14 +10,14 @@
   "exports": {
     "./styles.css": "./dist/index.css",
     "./class-names": "./src/class-names.ts",
-    "./menu-wrapper": "./src/Menu/menu-wrapper.tsx",
-    "./menu-item": "./src/Menu/menu-item.tsx",
-    "./menu-items": "./src/Menu/menu-items.tsx",
-    "./generate-menu": "./src/Menu/generate-menu.tsx",
+    "./base-layout": "./src/base-layout.tsx",
+    "./menu-item": "./src/menu-item.tsx",
+    "./menu-items": "./src/menu-items.tsx",
+    "./generate-menu": "./src/generate-menu.tsx",
     "./top-nav-bar": "./src/Nav/top-nav-bar.tsx",
     "./card": "./src/card.tsx",
-    "./desktop-menu-bar": "./src/Menu/desktop-menu-bar.tsx",
-    "./slide-in-menu-bar": "./src/Menu/slide-in-menu-bar.tsx"
+    "./desktop-menu-bar": "./src/desktop-menu-bar.tsx",
+    "./slide-in-menu-bar": "./src/slide-in-menu-bar.tsx"
   },
   "license": "MIT",
   "scripts": {

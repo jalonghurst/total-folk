@@ -2,7 +2,7 @@ import "@repo/ui/styles.css";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { MenuWrapper } from "@repo/ui/menu-wrapper";
+import BaseLayout from "@repo/ui/base-layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,20 +11,18 @@ export const metadata: Metadata = {
   description: "Frontend application",
 };
 
-export default function RootLayout({
+const RootLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}) => {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="z-10 flex h-screen overflow-hidden">
-          <div className="relative z-10 min-h-screen w-screen">
-            <MenuWrapper>{children}</MenuWrapper>
-          </div>
-        </div>
+        <BaseLayout>{children}</BaseLayout>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

@@ -3,7 +3,7 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Link from "next/link";
-import { classNames } from "../types/class-names";
+import { classNames } from "./types/class-names";
 import { IDecoratedMenuItem } from "./generate-menu";
 
 const MenuItem: React.FC<{
