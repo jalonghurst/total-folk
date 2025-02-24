@@ -1,6 +1,7 @@
 {
   "name": "@repo/ui",
   "version": "0.0.0",
+  "type": "module",
   "sideEffects": [
     "**/*.css"
   ],
@@ -10,14 +11,9 @@
   "exports": {
     "./styles.css": "./dist/index.css",
     "./class-names": "./src/class-names.ts",
-    "./base-layout": "./src/base-layout.tsx",
-    "./menu-item": "./src/menu-item.tsx",
-    "./menu-items": "./src/menu-items.tsx",
-    "./generate-menu": "./src/generate-menu.tsx",
-    "./top-nav-bar": "./src/Nav/top-nav-bar.tsx",
     "./card": "./src/card.tsx",
-    "./desktop-menu-bar": "./src/desktop-menu-bar.tsx",
-    "./slide-in-menu-bar": "./src/slide-in-menu-bar.tsx"
+    "./navigation-menu": "./src/components/navigation-menu.tsx",
+    "./utils": "./src/lib/utils.ts"
   },
   "license": "MIT",
   "scripts": {
@@ -34,15 +30,22 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/react": "^19.0.7",
+    "@types/node": "^22.13.5",
+    "@types/react": "^19.0.10",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.20.0",
-    "postcss": "^8.5.1",
+    "eslint": "^9.21.0",
+    "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "5.7.3"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
-    "next": "^15.1.7"
+    "@radix-ui/react-navigation-menu": "^1.2.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.475.0",
+    "next": "^15.1.7",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
   }
 }

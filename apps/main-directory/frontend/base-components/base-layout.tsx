@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import TopNavBar from "./Nav/top-nav-bar";
-import { DesktopMenuBar } from "./desktop-menu-bar";
-// import { SlideInMenuBar } from "./slide-in-menu-bar";
+import TopNavBar from "./top-nav-bar";
 
 type BaseLayoutProps = {
   children: React.ReactNode;
@@ -26,7 +24,6 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
     <div className="flex flex-col min-h-screen">
       <TopNavBar {...menuProps} />
       <div className="flex flex-1">
-        <DesktopMenuBar {...menuProps} />
         <main className="flex-1 overflow-auto">{children}</main>
       </div>
     </div>

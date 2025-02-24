@@ -1,5 +1,14 @@
 import React from "react";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+// import { Bars3Icon } from "@heroicons/react/24/outline";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@repo/ui/navigation-menu";
 import Link from "next/link";
 
 const TopNavBar: React.FC<{
@@ -16,17 +25,23 @@ const TopNavBar: React.FC<{
           <img className="h-10 aspect-1" src="/logo.svg" alt="logo" />
         </Link> */}
         <div className="justify-center hidden lg:flex md:space-x-10">
-          <button>
-            <Link href="/about">About</Link>
-          </button>
-          <button>Search</button>
-          <button>
-            <Link href="/discover">Discover</Link>
-          </button>
-          <button>More</button>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <Link href="/about" legacyBehavior passHref>
+                  <NavigationMenuTrigger>About</NavigationMenuTrigger>
+                </Link>
+                <NavigationMenuContent>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Link
+                  </NavigationMenuLink>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
         <div className="flex justify-center space-x-3 btn btn-primary btn:hover">
-          <Link href={"signin"}>Get started</Link>
+          {/* <Link href={"signin"}>Get started</Link> */}
         </div>
         <div className="flex lg:w-0 lg:hidden">
           <button
@@ -38,7 +53,7 @@ const TopNavBar: React.FC<{
             }}
           >
             <span className="sr-only">Access menu</span>
-            <Bars3Icon className="w-6 h-6" aria-hidden="true" />
+            {/* <Bars3Icon className="w-6 h-6" aria-hidden="true" /> */}
           </button>
         </div>
       </div>
